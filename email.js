@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const config = require("../config/config.js");
+const config = require("./config/config.js");
 const ical = require("ical-generator").default;
 
 // Create a transporter using SMTP

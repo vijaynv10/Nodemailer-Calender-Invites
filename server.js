@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const config = require("./config/config.js");
-const { send_email, getIcalObjectInstance } = require('../utilities/email.js');
+const { send_email, getIcalObjectInstance } = require('./email.js');
 
 const app = express();
 
@@ -25,17 +25,18 @@ app.get("/", (req, res) => {
 // email test route
 app.get("/send-email", (req, res) => 
 {
-
   res.json({ message: "Welcome to SILA." });
 });
 
 // email calender test route
 app.get("/send-email-with-invite", (req, res) => 
   {
-    const target_date = "22-07-2024";
+    const target_date = "2024-07-22";
     const emailSubject = "Test Calender Invite";
     const emailHTML = `<p> Hello, <br/> You have recieved a calender invite. </p>`;
-    const recipientEmail = "vijaynv10@gmail.com";
+
+    //Add the respective recipient email address here
+    const recipientEmail = "add email here";
 
     const calenderObj = getIcalObjectInstance(target_date, target_date, `Test Invite`, `This is a rest calender invite`, "Location", "Sender Name" ,"Sender Email")
 
