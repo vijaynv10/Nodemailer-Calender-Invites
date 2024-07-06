@@ -24,9 +24,16 @@ app.get("/", (req, res) => {
 // email test route
 app.get("/send-email", (req, res) => 
 {
-  
+
   res.json({ message: "Welcome to SILA." });
 });
+
+// email calender test route
+app.get("/send-email-with-invite", (req, res) => 
+  {
+    
+    res.json({ message: "Welcome to SILA." });
+  });
 
 // set port, listen for requests
 const PORT = 8080; //process.env.PORT || 8080;
